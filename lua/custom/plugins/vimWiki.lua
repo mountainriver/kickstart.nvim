@@ -3,6 +3,7 @@ return {
   init = function()
     vim.g.vimwiki_conceal_pre = 1
     vim.g.vimwiki_toc_link_format = 0
+    vim.g.vimwiki_global_ext = 0 --避免.md的filetype被设置为vimwiki
 
     -- 定义三个 Wiki 实例
     local wiki_1 = {

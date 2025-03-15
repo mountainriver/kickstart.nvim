@@ -107,6 +107,18 @@ vim.opt.number = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
+--1. 基础模式
+--n：在 普通模式（Normal mode） 启用鼠标。
+--v：在 可视模式（Visual mode） 启用鼠标（如选择文本）。
+--i：在 插入模式（Insert mode） 启用鼠标（如移动光标）。
+--c：在 命令行模式（Command-line mode） 启用鼠标（如选择命令历史）。
+--a：在 所有模式（All modes） 启用鼠标（等价于 nvich，但不包含 h 和 r）。
+--2. 特殊模式
+--h：在 帮助文件（Help files） 中启用鼠标（自动跳转链接）。
+--r：在 跳过 hit-enter 提示时 启用鼠标（如输出较多时按回车继续的场景）。
+--f：在 过滤文本（Filter text） 时启用鼠标（如使用 :! 过滤命令时）。
+--''（空字符串）：完全禁用鼠标。
+--可组合
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -1038,7 +1050,8 @@ require('lazy').setup({
 })
 
 vim.cmd.colorscheme 'retrobox'
-require 'keymaps'
+require 'configs/keymaps'
+require 'configs/vimwiki-outline'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
