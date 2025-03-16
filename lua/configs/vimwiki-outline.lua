@@ -9,7 +9,7 @@ local function get_vimwiki_headings()
       title = title:gsub('^%s*(.-)%s*$', '%1') -- 清理标题内部空格
       local level = #level_str
       table.insert(headings, {
-        text = string.rep('  ', level - 1) .. ' ' .. title, -- 使用树状图标
+        text = string.rep('  ', level - 1) .. '󰛓  ' .. title, -- 使用树状图标 󰓽  󰙅
         line = line_num, -- 使用 1-based 行号
       })
     end
