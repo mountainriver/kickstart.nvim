@@ -106,7 +106,7 @@ vim.opt.number = true
 -- vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = ''
 --1. 基础模式
 --n：在 普通模式（Normal mode） 启用鼠标。
 --v：在 可视模式（Visual mode） 启用鼠标（如选择文本）。
