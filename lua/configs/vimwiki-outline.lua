@@ -58,7 +58,7 @@ local function open_or_update_outline(main_cursor)
 
   local win_width = vim.api.nvim_win_get_width(main_win_id)
   local win_height = vim.api.nvim_win_get_height(main_win_id)
-  local width = math.floor(win_width * 0.3)
+  local width = math.min(40, math.floor(win_width * 0.3))
   local height = math.min(#headings + 2, math.floor(win_height * 0.8))
 
   -- 根据主窗口光标计算 outline 窗口的垂直位置
