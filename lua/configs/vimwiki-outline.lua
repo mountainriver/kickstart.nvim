@@ -13,7 +13,7 @@ local function get_vimwiki_headings()
       title = title:gsub('^%s*(.-)%s*$', '%1')
       local level = #level_str
       table.insert(headings, {
-        text = string.rep('  ', level - 1) .. '󰛓  ' .. title,
+        text = string.rep('  ', level - 1) .. '  ' .. title,
         line = line_num,
       })
     end
