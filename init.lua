@@ -257,7 +257,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically。自动侦测文件的缩进风格。推断出应该使用的缩进宽度（例如 shiftwidth 和 softtabstop）以及是否应该使用空格（expandtab）或制表符（tab）进行缩进，从而确保编辑器使用与文件原有格式一致的缩进设置。
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
