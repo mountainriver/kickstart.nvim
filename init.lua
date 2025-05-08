@@ -982,7 +982,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'json' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'json', 'org' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -1015,6 +1015,22 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+    -- 在 config 阶段先注册 parser，再调用 setup
+    config = function(_, opts)
+      -- 1. 注册 org 解析器
+      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+      parser_config.org = {
+        install_info = {
+          url = 'https://github.com/milisims/tree-sitter-org', -- Org 语法仓库
+          revision = 'main',
+          files = { 'src/parser.c', 'src/scanner.c' },
+        },
+        filetype = 'org',
+      } -- :contentReference[oaicite:0]{index=0}
+
+      -- 2. 调用原始的 setup
+      require('nvim-treesitter.configs').setup(opts)
+    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
