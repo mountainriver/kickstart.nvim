@@ -14,7 +14,7 @@ return {
       require('orgmode').setup {
         org_agenda_files = '~/orgfiles/**/*',
         org_default_notes_file = '~/orgfiles/refile.org',
-        org_todo_keywords = { 'TODO', 'WAITING', '|', 'DONE' },
+        org_todo_keywords = { 'TODO(t)', 'WAITING(w)', 'INPROGRESS(i)', '|', 'DONE(d)', 'CANCELED(c)' }, --竖线 | 分隔未完成和完成状态。括号中的字母为快速切换快捷键（如 ,tit 切换到 INPROGRESS）
         -- 捕获模板定义（快速添加任务、笔记等）
         org_capture_templates = {
           t = {
