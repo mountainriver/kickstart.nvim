@@ -994,6 +994,21 @@ require('lazy').setup({
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
+    config = function(_, opts)
+      -- 注册 org parser
+      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+      parser_config.org = {
+        install_info = {
+          url = 'https://github.com/milisims/tree-sitter-org',
+          files = { 'src/parser.c', 'src/scanner.c' },
+          revision = 'main',
+        },
+        filetype = 'org',
+      }
+
+      -- 应用 opts 设置
+      require('nvim-treesitter.configs').setup(opts)
+    end,
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
