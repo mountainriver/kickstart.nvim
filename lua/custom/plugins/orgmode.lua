@@ -2,6 +2,7 @@ return {
   {
     'nvim-orgmode/orgmode',
     dependencies = {
+      'nvim-treesitter/nvim-treesitter',
       'nvim-telescope/telescope.nvim',
       'nvim-orgmode/telescope-orgmode.nvim',
       'nvim-orgmode/org-bullets.nvim',
@@ -50,6 +51,7 @@ return {
         tag = '0.3.7',
       },
     },
+    cmd = { 'OrgRoam', 'OrgRoamNodeFind', 'OrgRoamNodeInsert', 'OrgRoamCapture' },
     config = function()
       require('org-roam').setup {
         directory = '~/orgfiles/.org_roam_files',
