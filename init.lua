@@ -990,7 +990,7 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
+        additional_vim_regex_highlighting = { 'ruby', 'org' },
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
@@ -1015,22 +1015,6 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-    -- 在 config 阶段先注册 parser，再调用 setup
-    config = function(_, opts)
-      -- 1. 注册 org 解析器
-      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-      parser_config.org = {
-        install_info = {
-          url = 'https://github.com/milisims/tree-sitter-org', -- Org 语法仓库
-          revision = 'main',
-          files = { 'src/parser.c', 'src/scanner.c' },
-        },
-        filetype = 'org',
-      } -- :contentReference[oaicite:0]{index=0}
-
-      -- 2. 调用原始的 setup
-      require('nvim-treesitter.configs').setup(opts)
-    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
