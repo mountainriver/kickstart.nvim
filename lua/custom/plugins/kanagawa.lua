@@ -43,18 +43,21 @@ return {
           -- 浮动窗口透明
           colors.NormalFloat = { bg = 'none' }
           colors.FloatBorder = { bg = 'none', fg = palette.dragonBlue }
-          -- 普通行号
-          colors.LineNr = {
+
+          colors.LineNr = { -- 行号颜色
             fg = '#8c8a87', -- 主题内置的标准灰色
             bg = 'none', -- 透明背景
-          } -- 当前行号
-          colors.CursorLineNr = {
+          }
+          colors.CursorLineNr = { -- 光标所在行
             fg = palette.carpYellow, -- 更亮的黄色
             bold = true, -- 加粗
             italic = true, -- 斜体
           }
-          -- 折叠区域行号
-          colors.FoldedLineNr = { fg = palette.fujiGray } -- 灰色
+          colors.FoldedLineNr = { fg = palette.fujiGray } -- 折叠区域行号灰色
+          colors.Visual = {
+            bg = '#55295b',
+            -- fg = palette.sumiInk0,
+          }
 
           return colors
         end,
@@ -65,7 +68,13 @@ return {
 
       vim.cmd.colorscheme 'kanagawa'
 
-      -- 额外高亮设置，会覆盖部分设置
+      -- 覆盖 Visual 高亮组
+      -- vim.api.nvim_set_hl(0, 'Visual', {
+      --   bg = '#FF5F87', -- 替换为你想要的颜色值
+      --   fg = 'NONE', -- 可选：修改前景色
+      --   bold = true, -- 可选：加粗文本
+      -- })
+      -- 覆盖行号高亮设置
       --vim.api.nvim_set_hl(0, 'LineNr', { fg = 'none', bg = 'none' })
     end,
   },
