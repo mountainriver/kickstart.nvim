@@ -14,6 +14,10 @@ return {
         ['python'] = 'python',
         ['c++'] = 'cpp', -- 确保键名用 [] 包裹
       },
+      diary_rel_path = 'diary', -- 日志相对路径
+      diary_frequency = 'weekly', -- 设置为周频
+      diary_start_week_day = 'sunday', -- 设置周起始日
+      -- ext = '.md',
       auto_toc = 1,
     }
 
