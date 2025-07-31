@@ -21,7 +21,7 @@ return {
       vim.api.nvim_create_autocmd('BufWritePost', {
         pattern = { '*.md', '*.wiki' },
         callback = function()
-          vim.cmd 'TaskWikiSync'
+          vim.cmd 'TaskWikiBufferSave'
         end,
       })
     end,
