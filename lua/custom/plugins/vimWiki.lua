@@ -9,6 +9,8 @@ return {
     local wiki_1 = {
       path = vim.fn.expand '~/vimWiki/work/', -- 使用绝对路径
       path_html = vim.fn.expand '~/vimWiki_html/work_html',
+      ext = '.wiki',
+      syntax = 'default',
       nested_syntaxes = {
         ['bash'] = 'bash',
         ['python'] = 'python',
@@ -24,6 +26,8 @@ return {
     local wiki_2 = {
       path = vim.fn.expand '~/vimWiki/live/',
       path_html = vim.fn.expand '~/vimWiki_html/live_html',
+      ext = '.wiki',
+      syntax = 'default',
       auto_toc = 1,
     }
 
@@ -31,6 +35,8 @@ return {
       name = 'learn',
       path = vim.fn.expand '~/vimWiki/learn/',
       path_html = vim.fn.expand '~/vimWiki_html/learn_html',
+      ext = '.wiki',
+      syntax = 'default',
       auto_toc = 1,
     }
 
