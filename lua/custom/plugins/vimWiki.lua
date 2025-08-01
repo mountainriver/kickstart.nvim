@@ -17,9 +17,8 @@ return {
         ['c++'] = 'cpp', -- 确保键名用 [] 包裹
       },
       diary_rel_path = 'diary', -- 日志相对路径
-      diary_frequency = 'weekly', -- 设置为周频
-      diary_start_week_day = 'sunday', -- 设置周起始日
-      -- ext = '.md',
+      diary_frequency = 'yearly', -- 设置为周频
+      -- diary_start_week_day = 'sunday', -- 设置周起始日
       auto_toc = 1,
     }
 
@@ -28,6 +27,8 @@ return {
       path_html = vim.fn.expand '~/vimWiki_html/live_html',
       ext = '.wiki',
       syntax = 'default',
+      diary_rel_path = 'diary', -- 日志相对路径
+      diary_frequency = 'yearly', -- 设置为周频
       auto_toc = 1,
     }
 
@@ -37,6 +38,8 @@ return {
       path_html = vim.fn.expand '~/vimWiki_html/learn_html',
       ext = '.wiki',
       syntax = 'default',
+      diary_rel_path = 'diary', -- 日志相对路径
+      diary_frequency = 'yearly', -- 设置为周频
       auto_toc = 1,
     }
 

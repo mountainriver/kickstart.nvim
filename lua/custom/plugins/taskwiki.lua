@@ -1,8 +1,9 @@
 return {
   {
     'tools-life/taskwiki',
+    --enabled = false,
     dependencies = { 'vimwiki/vimwiki', 'nvim-lua/plenary.nvim' },
-    ft = { 'markdown', 'vimwiki' },
+    ft = { 'taskwiki' },
     -- keys = {
     --   { "<leader>ww", ":VimwikiIndex<cr>", desc = "VimWiki Index" },
     --   { "<leader>wn", ":VimwikiMakeDiaryNote<cr>", desc = "New Diary Note" },
