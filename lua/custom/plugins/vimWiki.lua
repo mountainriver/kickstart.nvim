@@ -4,6 +4,7 @@ return {
     vim.g.vimwiki_conceal_pre = 1
     vim.g.vimwiki_toc_link_format = 0
     vim.g.vimwiki_global_ext = 0 --避免.md的filetype被设置为vimwiki
+    --vim.g.vimwiki_folding = 'expr:quick' -- 折叠方式,默认'' 关闭，对打开文件速度影响大
 
     -- 定义三个 Wiki 实例
     local wiki_1 = {
