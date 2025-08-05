@@ -982,7 +982,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'json', 'org' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'json' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -990,22 +990,11 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby', 'org' },
+        additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
     config = function(_, opts)
-      -- 注册 org parser
-      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-      parser_config.org = {
-        install_info = {
-          url = 'https://github.com/milisims/tree-sitter-org',
-          files = { 'src/parser.c', 'src/scanner.c' },
-          revision = 'main',
-        },
-        filetype = 'org',
-      }
-
       -- 应用 opts 设置
       require('nvim-treesitter.configs').setup(opts)
     end,
@@ -1067,5 +1056,10 @@ require('lazy').setup({
 
 require 'configs/keymaps'
 require 'configs/vimwiki-outline'
+-- modeline 的配置只影响打开init.lua文件，全局设置需要：
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
