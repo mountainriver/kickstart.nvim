@@ -134,6 +134,9 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- 换行无论词边界，直接在屏幕最右列断行,而不是只在空格、连接符等位置换行
+vim.opt.linebreak = false
+
 -- Save undo history
 vim.opt.undofile = true
 
