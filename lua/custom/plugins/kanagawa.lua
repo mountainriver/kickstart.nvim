@@ -58,6 +58,8 @@ return {
             bg = '#55295b',
             -- fg = palette.sumiInk0,
           }
+          colors.Search = { bg = '#FFD700', fg = palette.sumiInk0 } -- Custom bright background for search results
+          colors.IncSearch = { bg = '#FFD700', fg = palette.sumiInk0 } -- Custom bright background for incremental search results
 
           return colors
         end,
@@ -67,15 +69,6 @@ return {
       }
 
       vim.cmd.colorscheme 'kanagawa'
-
-      -- 覆盖 Visual 高亮组
-      -- vim.api.nvim_set_hl(0, 'Visual', {
-      --   bg = '#FF5F87', -- 替换为你想要的颜色值
-      --   fg = 'NONE', -- 可选：修改前景色
-      --   bold = true, -- 可选：加粗文本
-      -- })
-      -- 覆盖行号高亮设置
-      --vim.api.nvim_set_hl(0, 'LineNr', { fg = 'none', bg = 'none' })
     end,
   },
 }
