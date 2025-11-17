@@ -48,7 +48,7 @@ return {
             fg = '#8c8a87', -- 主题内置的标准灰色
             bg = 'none', -- 透明背景
           }
-          colors.CursorLineNr = { -- 光标所在行
+          colors.CursorLineNr = { -- 光标所在行行号
             fg = palette.carpYellow, -- 更亮的黄色
             bold = true, -- 加粗
             italic = true, -- 斜体
@@ -58,8 +58,9 @@ return {
             bg = '#55295b',
             -- fg = palette.sumiInk0,
           }
-          colors.Search = { bg = '#FFD700', fg = palette.sumiInk0 } -- Custom bright background for search results
-          colors.IncSearch = { bg = '#FFD700', fg = palette.sumiInk0 } -- Custom bright background for incremental search results
+          colors.Search = { bg = '#FFD700', fg = '#454545' } -- Custom bright background for search results
+          colors.IncSearch = { bg = '#FFD700', fg = '#454545' } -- Custom bright background for incremental search results
+          colors.CurSearch = { bg = '#FFA500', fg = '#454545' } -- Custom background for the current search result
 
           return colors
         end,
